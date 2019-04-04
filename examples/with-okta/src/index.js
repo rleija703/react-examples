@@ -6,9 +6,9 @@ import { Security } from '@okta/okta-react';
 import App from './App';
 
 const oktaConfig = {
-  issuer: 'https://melinguine-code-test.okta.com/',
+  issuer: process.env.REACT_APP_OKTA_ISSUER,
   redirect_uri: `${window.location.origin}/implicit/callback`,
-  client_id: '0oaf1yetrVlOB2rkW356',
+  client_id: process.env.REACT_APP_OKTA_CLIENT_ID,
 };
 
 ReactDOM.render(

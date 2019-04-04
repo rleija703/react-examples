@@ -5,7 +5,7 @@ class LoginPage extends React.Component {
 
   async componentDidMount() {
     const authenticated = await this.props.auth.isAuthenticated();
-
+    console.log(this.props.auth)
     if (authenticated !== false) {
       console.log('User is authenticated??')
       const user = await this.props.auth.getUser();
