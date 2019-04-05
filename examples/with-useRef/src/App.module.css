@@ -1,0 +1,22 @@
+html {
+  font-family: 'Lora', serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  max-width: 960px;
+  padding: 30px;
+  margin: auto;
+}
+
+.inputGroup {
+  display: flex;
+  flex-flow: wrap row;
+}
+
+.inputGroup label,
+.inputGroup input {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
