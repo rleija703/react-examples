@@ -2,21 +2,67 @@ html {
   font-family: 'Lora', serif;
 }
 
+.label {
+  display: block;
+  border: none;
+  font-size: 48px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 300;
+  color: #8F8F8F;
+  z-index: -1;
+  transition: all 0.2s ease;
+}
+
+.active .label {
+  font-weight: 300;
+  color: #8F8F8F;
+  font-size: 22px;
+  transform: translateY(-55px);
+}
+
+.input:focus {
+  outline: 0;
+}
+
+.input {
+  font-size: 48px;
+  font-weight: 300;
+  border-radius: 2px;
+  padding-left: 2px;
+  border: none;
+  width: 80%;
+  background: rgba(0, 0, 0, 0);
+  overflow-x: hidden;
+}
+
 .container {
   display: flex;
   justify-content: center;
   max-width: 960px;
-  padding: 30px;
+  padding: 60px 30px;
   margin: auto;
 }
 
 .inputGroup {
   display: flex;
   flex-flow: wrap row;
+  position: relative;
 }
 
 .inputGroup label,
 .inputGroup input {
   flex: 0 0 100%;
   max-width: 100%;
+}
+
+.border {
+  border-bottom: 1px solid red;
+  width: 10%;
+  transition: width .2s ease;
+}
+
+.active .border {
+  width: 100%;
 }
