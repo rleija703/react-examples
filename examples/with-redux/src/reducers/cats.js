@@ -1,5 +1,5 @@
 const initialState = {
-  cats: [],
+  list: [],
 };
 
 const actions = {
@@ -8,7 +8,7 @@ const actions = {
 
 function addCat(state, action) {
   return {
-    cats: state.cats.push(action.payload),
+    list: [...state.list, action.payload],
   }
 }
 
