@@ -11,6 +11,9 @@ const resolveAppPath = relativePath => path.resolve(appDirectory, relativePath);
 // Host
 const host = process.env.HOST || 'localhost';
 
+// Required for babel-preset-react-app
+process.env.NODE_ENV = 'development';
+
 module.exports = {
 
   // Environment mode
@@ -43,6 +46,24 @@ module.exports = {
     // Public path is root of content base
     publicPath: '/',
 
+  },
+
+  module: {
+    rules: [
+      {
+        test:  /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        include: resolveAppPath('src'),
+        loader: 'babel-loader',
+        options: {
+          presets: [
+
+            // Preset includes JSX, TypeScript, and some ESnext features
+            require.resolve('babel-preset-react-app'),
+          ]
+        }
+      }
+    ],
   },
 
   plugins: [
