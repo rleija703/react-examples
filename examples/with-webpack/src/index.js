@@ -1,4 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(<h1>Hello World</h1>, document.getElementById('root'));
+const App = () => {
+
+  React.useEffect(() => {
+    fetch('/api/bypass-example')
+      .then(res => res.json())
+      .then(data => console.log(data))
+  }, [])
+
+  return <h1>Hello world!</h1>;
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));

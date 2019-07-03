@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Route,
+  Switch,
   NavLink } from 'react-router-dom';
 
-import routes from './routes';
+const CatList = React.lazy(() => import('./pages/CatList'));
+const AddCat = React.lazy(() => import('./pages/AddCat'));
+const SingleCat = React.lazy(() => import('./pages/SingleCat'));
 
 const App = () => {
   const [cats, setCats] = useState([]);
@@ -13,6 +16,7 @@ const App = () => {
     <div className="container p-5">
       <div className="row justify-content-sm-center">
         <div className="col-sm-5">
+        <React.Suspense fallback={<span>Loading...</span>}>
           <Router>
             <ol className="breadcrumb">
               <NavLink
@@ -28,21 +32,18 @@ const App = () => {
                 Add Cat
               </NavLink>
             </ol>
-            {routes.map(({path, Component}, i) => (
-              <Route
-                key={i}
-                exact
-                path={path}
-                component={({history}) => {
-                  return <Component
-                  onSubmit={cat => {
-                    setCats([...cats, cat])
-                    history.push('/')
-                  }}
-                  cats={cats} />
+            <Switch>
+              <Route exact path="/" render={() => <CatList cats={cats}/>} />
+              <Route path="/add" render={props => {
+                return <AddCat onSubmit={cat => {
+                  setCats([...cats, cat])
+                  props.history.push('/')
                 }} />
-            ))}
+              }} />
+              <Route exact path="/cat/:name" render={() => <SingleCat cats={cats} />} />
+            </Switch>
           </Router>
+          </React.Suspense>
         </div>
       </div>
     </div>

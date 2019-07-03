@@ -46,6 +46,14 @@ module.exports = {
     // Public path is root of content base
     publicPath: '/',
 
+    proxy: {
+      '/api/bypass-example': {
+        bypass: (req, res) => res.send({
+          mssg: 'proxy server - Message came from bypass property in webpack'
+        }),
+      },
+    },
+
   },
 
   module: {
