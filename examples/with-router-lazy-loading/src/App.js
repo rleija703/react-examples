@@ -18,7 +18,7 @@ const App = () => {
         <div className="col-sm-5">
         <React.Suspense fallback={<span>Loading...</span>}>
           <Router>
-            <ol className="breadcrumb">
+            <ol>
               <NavLink
                 to="/"
                 className="breadcrumb-item"
