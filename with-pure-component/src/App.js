@@ -1,16 +1,8 @@
 import React from 'react';
 
-class Greeting extends React.Component {
-
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('Greeting - should component update lifecycle');
-
-    return false;
-  }
-
+class Greeting extends React.PureComponent {
   render() {
-    console.log('Greeting - render lifecycle')
-    return <h1>Hi there, my name is Ruben!</h1>
+    return <h1>Hi there, my name is {this.props.name}!</h1>
   }
 }
 
@@ -18,6 +10,7 @@ class App extends React.Component {
 
   state = {
     greeted: false,
+    name: 'Ruben'
   };
 
   componentDidMount() {
@@ -25,8 +18,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('App - render lifecycle')
-    return <Greeting />
+    return <Greeting name={this.state.name} />
   }
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 
 class Greeting extends React.Component {
 
-  shouldComponentUpdate() {
+  shouldComponentUpdate(nextProps, nextState) {
     console.log('Greeting - should component update lifecycle');
 
     return false;
