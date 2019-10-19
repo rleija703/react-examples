@@ -5,7 +5,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-redux": "^7.0.2",
-    "react-scripts": "2.1.8",
+    "react-scripts": "^3.2.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
