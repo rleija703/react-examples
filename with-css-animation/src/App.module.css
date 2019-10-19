@@ -1,0 +1,25 @@
+html {
+  min-height: 100%;
+  display: flex;
+}
+
+body {
+  margin: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.animate {
+  transition: transform .35s ease-in-out;
+}
+
+.animate.grow {
+  transform: scale(1.5);
+}
