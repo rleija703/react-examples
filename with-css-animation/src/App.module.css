@@ -1,6 +1,7 @@
 html {
   min-height: 100%;
   display: flex;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -11,9 +12,43 @@ body {
   justify-content: center;
 }
 
+.h4 {
+  margin: 0;
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 1.5rem;
+}
+
 button {
   padding: 8px 16px;
   cursor: pointer;
+}
+
+.btn {
+  display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    cursor: pointer;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn.primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.container {
+  padding:15px;
 }
 
 .animate {
@@ -22,4 +57,41 @@ button {
 
 .animate.grow {
   transform: scale(1.5);
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.modalContent {
+  width: 100%;
+  color: #004085;
+  background-color: #cce5ff;
+  padding: .75rem 1.25rem;
+  border: 1px solid #b8daff;
+  border-radius: .25rem;
+}
+
+div[class*=modal2-enter],
+div[class*=modal2-enter-done] {
+  opacity: 0;
+  transform: scale(0.9);
+}
+div[class*=modal2-enter-active] {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+div[class*=modal2-exit],
+div[class*=modal2-exit-done] {
+  opacity: 1;
+}
+div[class*=modal2-exit-active] {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
 }

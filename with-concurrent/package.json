@@ -1,0 +1,18 @@
+{
+  "name": "with-concurrent",
+  "scripts": {
+    "start": "react-scripts start"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "react": "0.0.0-experimental-b53ea6ca0",
+    "react-dom": "0.0.0-experimental-b53ea6ca0",
+    "react-scripts": "^3.2.0"
+  }
+}
