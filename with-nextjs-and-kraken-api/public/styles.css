@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  margin: 0;
+}
+
+input {
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.5rem 0.75rem;
+  border: 0;
+}
+
+input:focus {
+  outline: 0;
+  border: 2px solid #2563eb;
+}
+
+button {
+  background-color: rgb(79, 70, 229);
+  display: block;
+  width: 100%;
+  color: #fff;
+  font-weight: 500;
+  outline: 0;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border-color: transparent;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(67, 56, 202);
+}
+
+.headline {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.container {
+  max-width: 28rem;
+  margin: auto;
+}
+
+.container.result {
+  margin-top: 1.5rem;
+}
+
+.rounded-form {
+  margin-top: 1.5rem;
+  border-radius: 0.375rem;
+  max-width: 28rem;
+  border: 1px solid rgb(209, 213, 219);
+  display: flex;
+  overflow: hidden;
+}
+
+.action-box {
+  margin-top: 1.5rem;
+}
+
+.card {
+  border: 1px solid #ccc;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.06),
+    0px 3px 4px 0px rgba(0, 0, 0, 0.042), 0px 1px 8px 0px rgba(0, 0, 0, 0.036);
+}
+
+.card-value {
+  font-size: 2rem;
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.card-label {
+  color: rgba(52, 49, 76, 0.54);
+  margin: 0;
+  font-size: 0.875rem;
+  text-transform: capitalize;
+}
