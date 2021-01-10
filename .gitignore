@@ -24,3 +24,5 @@ yarn-error.log*
 *.sqlite
 
 .webpack
+
+.next
