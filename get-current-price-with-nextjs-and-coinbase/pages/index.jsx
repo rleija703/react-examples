@@ -22,7 +22,7 @@ const useCoinbaseAPI = () => {
       try {
         // No need to make a request if symbol value is empty.
         if (symbol.trim().length < 1) {
-          console.log("Symbol is empty");
+          setError([{ message: 'Enter a symbol and fiat currency. e.g - BTC-USD' }])
           return;
         }
 
@@ -31,10 +31,7 @@ const useCoinbaseAPI = () => {
         const { errors, data } = await res.json();
 
         // IF any errors, set error to state
-        if (errors) {
-          setError(errors);
-          return;
-        }
+        setError(errors);
 
         // Set ticker data to state
         setData(data);
@@ -62,15 +59,18 @@ export default () => {
       </Head>
       <div className="container">
         <h2 className="headline">Search Cyrpto Currency Market Data</h2>
+        <p>Enter symbol then fiat currency. e.g - BTC-USD</p>
         <div className="rounded-form">
-          <input type="text" placeholder="ETHUSD" onChange={handleChange} />
+          <input type="text" placeholder="BTC-USD" onChange={handleChange} />
         </div>
         <div className="action-box">
           <button onClick={handleSubmit}>Search</button>
         </div>
       </div>
       {/*  */}
-      {(error && <h1 className="headline">{error}</h1>) ||
+      {(error && <h1 className="headline">
+        {error[0].message}
+      </h1>) ||
         (data && (
           <div className="container result">
             {Object.keys(data).map((dataKey, i) => (
